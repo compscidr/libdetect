@@ -46,12 +46,13 @@ public class libdetectTest {
         }, false);
 
         ServerSocket s = new ServerSocket(TEST_PORT);
-        s.accept();
+        Socket client = s.accept();
 
         //need to give it some time to do the callback before checking
         Thread.sleep(500);
 
         assert(resultPort == TEST_PORT);
+        client.close();
         s.close();
 
         //need to give it some time to do the callback before checking
