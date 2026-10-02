@@ -14,7 +14,7 @@ repositories {
 
 ```java
 dependencies {
-   implementation 'com.github.compscidr:libdetect:v1.0'
+   implementation 'com.github.compscidr:libdetect:v2.0'
 }
 ```
 
