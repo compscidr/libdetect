@@ -1,7 +1,6 @@
-import com.google.common.collect.Sets;
-
 import java.net.*;
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 /*
  * Detects other devices on the same subnet also using LibDetect on the same port.
@@ -34,7 +33,7 @@ public class LibDetect {
      * @param actionListener the listener of the PeerReachable and PeerUnreachable events
      */
     public void start(int port, ActionListener actionListener, boolean skipOurself) {
-        Set<TCPMonitor> tcpMonitors = Sets.newConcurrentHashSet();
+        Set<TCPMonitor> tcpMonitors = ConcurrentHashMap.newKeySet();
         Thread t = new Thread(() -> {
             Set<InetAddress> ipAddresses =  getInetAddresses();
 
